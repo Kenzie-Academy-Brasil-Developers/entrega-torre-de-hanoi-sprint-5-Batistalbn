@@ -1,27 +1,37 @@
-/* to na duvida se pode ser usado direto no main 
-ou se precisa ser colocado em cada section individualmente
-caso precise individualmente precisamos colocar direto no js? */
 body{
-  background-color: aqua;
+  background-color: white;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-/* Title */
+/* header */
 .title {
   margin-bottom: 20px;
 }
 
 .title h1{
-  font-size: 36px;
+  font-size: 46px;
   font-weight: 700;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   margin-top: 20px;
 }
 
-/* Jogo */
+/* corpo */
+.jogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jogo__texto{
+  font-size: 36px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: red;
+  margin-bottom: 20px;
+}
+
 .estruturaGlobal {
   display: flex;
   flex-direction: column;

@@ -27,8 +27,6 @@ disco3.id = "disco3"
 torreInicial.appendChild(disco3);
 
 // criar um handler de clique em todas as sections
-// to achando que para essa parte e as que vêm a seguir precisaremos criar uma function. bora ver.
-
 const torres = document.querySelectorAll('section');
 console.log(torres);
 
