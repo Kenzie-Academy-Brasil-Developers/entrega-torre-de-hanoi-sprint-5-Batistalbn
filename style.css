@@ -1,0 +1,9 @@
+/* to na duvida se pode ser usado direto no main 
+ou se precisa ser colocado em cada section individualmente
+caso precise individualmente precisamos colocar direto no js? */
+
+main#estruturaGlobal {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
