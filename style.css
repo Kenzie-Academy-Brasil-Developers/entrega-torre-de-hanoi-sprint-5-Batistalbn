@@ -1,9 +1,89 @@
 /* to na duvida se pode ser usado direto no main 
 ou se precisa ser colocado em cada section individualmente
 caso precise individualmente precisamos colocar direto no js? */
+body{
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
-main#estruturaGlobal {
+/* Title */
+.title {
+  margin-bottom: 20px;
+}
+
+.title h1{
+  font-size: 36px;
+  font-weight: 700;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-top: 20px;
+}
+
+/* Jogo */
+.estruturaGlobal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  height: 800px;
+  margin-bottom: 20px;
+}
+
+.estruturaGlobal section {
+  background-color: lightgray;
+  width: 250px;
+  height: 250px;
+  max-height: 250px;
+  border: 2px solid black;
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
+  }
+
+
+#disco1 {
+  background-color: blue;
+  height: 40px;
+  width: 90%;
+  border-radius: 20px;
+  margin: 1px;
+}
+
+#disco2{
+  background-color: red;
+  height: 40px;
+  width: 70%;
+  border-radius: 20px;
+  margin: 1px;
+}
+
+#disco3{
+  background-color: green;
+  height: 40px;
+  width: 50%;
+  border-radius: 20px;
+  margin: 1px;
+}
+
+@media screen and (min-width: 800px) {
+  body{
+    justify-content: space-around;
+    height: 500px;
+  }
+  
+  .estruturaGlobal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 280px;
+  }
+
+  .estruturaGlobal section {
+    width: 230px;
+  }
 }
