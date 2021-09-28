@@ -22,3 +22,10 @@ section1.appendChild(div3);
 
 // criar um handler de clique em todas as sections
 // to achando que para essa parte e as que vêm a seguir precisaremos criar uma function. bora ver.
+
+// função para verificar o tamanho do disco (impedir de mover a depender do tamanho)
+
+function tamanhoDisco() {}
+
+// element.clientWidth para pegar os tamanhos do disco
+// Condição de vitória: verificar o número de discos numa torre e a ordem de tamanhos. Usar o childElementCount para quantidade e Element.clientWidth para pegar os tamanhos dos discos.
