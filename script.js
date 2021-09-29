@@ -28,21 +28,34 @@ torreInicial.appendChild(disco3);
 
 // criar um handler de clique em todas as sections
 
+// const torres = document.querySelectorAll('section');
+// console.log(torres);
+
+// const disco = document.querySelectorAll('div');
+// console.log(disco);
+
+// let torreClicada;
+// torres.forEach(torre =>
+//   torre.addEventListener('click', evt => {
+//     torreClicada = evt.target.id;
+//     return torreClicada;
+//     console.log(torreClicada);
+//   })
+// );
+// console.log(torresEvento);
+
+const handleClick = function (evt) {
+  const torre = evt.target;
+  console.log(torre.id);
+};
+
 const torres = document.querySelectorAll('section');
-console.log(torres);
 
-const disco = document.querySelectorAll('div');
-console.log(disco);
+for (let i = 0; i < torres.length; i++) {
+  torres[i].addEventListener('click', handleClick);
+}
 
-let torresEvento = torres.forEach(torre =>
-  torre.addEventListener('click', evt => {
-    let torreClicada = evt.target.id;
-    // return torreClicada;
-    console.log(torreClicada);
-  })
-);
-console.log(torresEvento);
-
+// const torreCilada = torres.target.id;
 // function interceptarClickTorre(evt){
 //     const clickTorre = torreClicada;
 //     if(clickTorre.)
