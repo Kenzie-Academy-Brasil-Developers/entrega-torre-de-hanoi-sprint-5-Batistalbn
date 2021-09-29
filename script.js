@@ -44,15 +44,38 @@ torreInicial.appendChild(disco3);
 // );
 // console.log(torresEvento);
 
-const handleClick = function (evt) {
-  const torre = evt.target;
-  console.log(torre.id);
-};
-
 const torres = document.querySelectorAll('section');
 
+let torre;
+let ultimoDisco;
+const primeiroClick = function (evt) {
+  torre = evt.currentTarget;
+  ultimoDisco = evt.currentTarget.lastElementChild;
+
+  // console.log(disco.clientWidth);
+  // if (disco.clientWidth >) {
+  // }
+};
+
+const segundoClick = function (evt) {
+  torre = evt.currentTarget;
+  ultimoDisco = evt.currentTarget.lastElementChild;
+  if (
+    ultimoDisco.clientWidth < torre.lastElementChild ||
+    ultimoDisco.lastElementChild === 'null'
+  ) {
+    torre.appendChild(ultimoDisco);
+  }
+};
+let clickOne;
+if ((clickOne = true)) {
+  primeiroClick();
+} else if ((clickOne = false)) {
+  segundoClick();
+}
+
 for (let i = 0; i < torres.length; i++) {
-  torres[i].addEventListener('click', handleClick);
+  torres[i].addEventListener('click', primeiroClick, segundoClick);
 }
 
 // const torreCilada = torres.target.id;
