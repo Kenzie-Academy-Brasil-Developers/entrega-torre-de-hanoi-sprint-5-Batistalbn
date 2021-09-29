@@ -4,6 +4,7 @@ const parent = document.getElementById('estruturaGlobal');
 const torreInicial = document.createElement('section');
 torreInicial.id = 'Torre-inicial';
 parent.appendChild(torreInicial);
+console.log(torreInicial);
 
 const torreMeio = document.createElement('section');
 torreMeio.id = 'Torre-meio';
@@ -50,8 +51,7 @@ console.log(torresEvento);
 
 // função para verificar o tamanho do disco (impedir de mover a depender do tamanho)
 function tamanhoDisco(primeiroClick, segundoClick) {
-  // primeiro pegar a torre que sofreu o primeiro click e armazenar numa variável o último disco contido na torre
-  //  depois pegar essa variável e verificar o tamanho do disco
+  
   let discoNaTorreInicial = torreClicada.lastElementChild();
 
   let torreFinal = torreClicada.lastElementChild();
@@ -67,6 +67,13 @@ function tamanhoDisco(primeiroClick, segundoClick) {
   }
   return torreFinal;
 }
-// tipo, pra fazer essa função, eu preciso pegar o tamanho dos discos, pra isso, preciso pegar o último disco em cima da torre e verificar o tamanho dele. só que ai preciso verificar a torre inicial clicada, pra ver o disco nela (preciso da variável em que esse disco está contido) e dps verificar o tamanho.
-// element.clientWidth para pegar os tamanhos do disco
-// Condição de vitória: verificar o número de discos numa torre e a ordem de tamanhos. Usar o childElementCount para quantidade e Element.clientWidth para pegar os tamanhos dos discos.
+
+function vitoria() {
+  const qtd = document.querySelectorAll('#Torre-final div').length
+  const text = document.getElementById('textWin')
+  if(qtd === 3) {
+    text.innerText = "Parabéns, você conseguiu!!!"
+  } else {
+    text.innerText = "Vamos lá, você consegue!"
+  }
+}
