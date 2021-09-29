@@ -51,6 +51,16 @@ torres.forEach(torre =>
   })
 );
 
+function vitoria() {
+  const qtd = document.querySelectorAll('#Torre-final div').length;
+  const text = document.getElementById('textWin');
+  if (qtd === 3) {
+    text.innerText = 'Parabéns, você conseguiu!!!';
+  } else {
+    text.innerText = 'Vamos lá, você consegue!';
+  }
+}
+
 // const torre1 = torreInicial.addEventListener('click', pegarDisco);
 // const torre2 = torreMeio.addEventListener('click', pegarDisco);
 // const torre3 = torreFinal.addEventListener('click', pegarDisco);
@@ -88,12 +98,12 @@ torres.forEach(torre =>
 // element.clientWidth para pegar os tamanhos do disco
 // Condição de vitória: verificar o número de discos numa torre e a ordem de tamanhos. Usar o childElementCount para quantidade e Element.clientWidth para pegar os tamanhos dos discos.
 
-function vitoria() {
-  const qtd = document.querySelectorAll('#Torre-final div').length;
-  const text = document.getElementById('textWin');
-  if (qtd === 3) {
-    text.innerText = 'Parabéns, você conseguiu!!!';
-  } else {
-    text.innerText = 'Vamos lá, você consegue!';
-  }
-}
+// function vitoria() {
+//   const qtd = document.querySelectorAll('#Torre-final div').length;
+//   const text = document.getElementById('textWin');
+//   if (qtd === 3) {
+//     text.innerText = 'Parabéns, você conseguiu!!!';
+//   } else {
+//     text.innerText = 'Vamos lá, você consegue!';
+//   }
+// }
