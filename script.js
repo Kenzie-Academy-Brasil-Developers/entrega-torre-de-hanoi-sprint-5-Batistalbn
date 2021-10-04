@@ -43,11 +43,15 @@ torres.forEach(torre =>
     console.log(ultimoDisco);
     let torreClicada = evt.currentTarget;
     console.log(torreClicada);
-    if (ultimoDisco) {
-      console.log(ultimoDisco);
+
+    let trueDisco;
+    if (trueDisco === true) {
       torreClicada.appendChild(ultimoDisco);
+      console.log(ultimoDisco);
+    } else if (trueDisco === false) {
+      torreClicada;
     }
-    // return torreClicada;
+    return torreClicada;
   })
 );
 
