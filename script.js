@@ -26,83 +26,34 @@ const disco3 = document.createElement('div');
 disco3.id = 'disco3';
 torreInicial.appendChild(disco3);
 
-// criar um handler de clique em todas as sections
-
-// const torres = document.querySelectorAll('section');
-// console.log(torres);
-
-// const disco = document.querySelectorAll('div');
-// console.log(disco);
-
-// let torreClicada;
-// torres.forEach(torre =>
-//   torre.addEventListener('click', evt => {
-//     torreClicada = evt.target.id;
-//     return torreClicada;
-//     console.log(torreClicada);
-//   })
-// );
-// console.log(torresEvento);
-
 const torres = document.querySelectorAll('section');
 
-let torre;
-let ultimoDisco;
-const primeiroClick = function (evt) {
-  torre = evt.currentTarget;
-  ultimoDisco = evt.currentTarget.lastElementChild;
+let click = false;
+let disco;
 
-  // console.log(disco.clientWidth);
-  // if (disco.clientWidth >) {
-  // }
-};
+torres.forEach((element) => {
+  element.addEventListener("click", movimentoDisco);
+});
 
-const segundoClick = function (evt) {
-  torre = evt.currentTarget;
-  ultimoDisco = evt.currentTarget.lastElementChild;
-  if (
-    ultimoDisco.clientWidth < torre.lastElementChild ||
-    ultimoDisco.lastElementChild === 'null'
-  ) {
-    torre.appendChild(ultimoDisco);
+function movimentoDisco(event) {
+  let torreSelecionada = event.currentTarget;
+
+  let qtdDisco = torreSelecionada.childElementCount;
+
+  if (click === false && qtdDisco > 0) {
+    click = true;
+    disco = torreSelecionada.children[qtdDisco - 1]
+    console.log(click)
+  } else if (click === true){
+    if (
+      torreSelecionada.children.length === 0 || 
+      torreSelecionada.lastElementChild.clientWidth >= disco.clientWidth
+      ){
+        torreSelecionada.appendChild(disco);
+        click = false;
+    } else {
+      click = false
+      alert("VocÊ não pode mover este disco")
+    }
   }
-};
-let clickOne;
-if ((clickOne = true)) {
-  primeiroClick();
-} else if ((clickOne = false)) {
-  segundoClick();
 }
-
-for (let i = 0; i < torres.length; i++) {
-  torres[i].addEventListener('click', primeiroClick, segundoClick);
-}
-
-// const torreCilada = torres.target.id;
-// function interceptarClickTorre(evt){
-//     const clickTorre = torreClicada;
-//     if(clickTorre.)
-// }
-
-// função para verificar o tamanho do disco (impedir de mover a depender do tamanho)
-function tamanhoDisco(primeiroClick, segundoClick) {
-  // primeiro pegar a torre que sofreu o primeiro click e armazenar numa variável o último disco contido na torre
-  //  depois pegar essa variável e verificar o tamanho do disco
-  let discoNaTorreInicial = torreClicada.lastElementChild();
-
-  let torreFinal = torreClicada.lastElementChild();
-
-  // fazer um if onde se o tamanho do disco for menor do que o do disco na próxima torre ou se ela estiver vazia, mover o disco pra frente
-  if (
-    discoNaTorreInicial.clientWidth() < torreFinal.clientWidth() ||
-    torreFinal.lastElementChild() === 'null'
-  ) {
-    torreFinal.appendChild(discoNaTorreInicial);
-  } else {
-    // caso contrário, alertar
-  }
-  return torreFinal;
-}
-// tipo, pra fazer essa função, eu preciso pegar o tamanho dos discos, pra isso, preciso pegar o último disco em cima da torre e verificar o tamanho dele. só que ai preciso verificar a torre inicial clicada, pra ver o disco nela (preciso da variável em que esse disco está contido) e dps verificar o tamanho.
-// element.clientWidth para pegar os tamanhos do disco
-// Condição de vitória: verificar o número de discos numa torre e a ordem de tamanhos. Usar o childElementCount para quantidade e Element.clientWidth para pegar os tamanhos dos discos.
