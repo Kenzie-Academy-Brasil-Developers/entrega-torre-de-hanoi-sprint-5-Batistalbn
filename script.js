@@ -29,7 +29,9 @@ torreInicial.appendChild(disco3);
 // textos
 const text = document.getElementById('textWin')
 
+
 const torres = document.querySelectorAll('section');
+
 
 let click = false;
 let disco;
