@@ -26,6 +26,9 @@ const disco3 = document.createElement('div');
 disco3.id = 'disco3';
 torreInicial.appendChild(disco3);
 
+// textos
+const text = document.getElementById('textWin')
+
 const torres = document.querySelectorAll('section');
 
 let click = false;
@@ -43,17 +46,29 @@ function movimentoDisco(event) {
   if (click === false && qtdDisco > 0) {
     click = true;
     disco = torreSelecionada.children[qtdDisco - 1]
-    console.log(click)
+    disco.style.border = "2px solid yellow"
   } else if (click === true){
     if (
       torreSelecionada.children.length === 0 || 
       torreSelecionada.lastElementChild.clientWidth >= disco.clientWidth
-      ){
+     ){
         torreSelecionada.appendChild(disco);
         click = false;
+        disco.style.border = "none"
     } else {
       click = false
-      alert("VocÊ não pode mover este disco")
+      text.innerText = "Você não pode mover este disco.";
+      disco.style.border = "none"
     }
   }
+
+  vitoria()
+}
+
+function vitoria() {
+  const qtdTorreMeio = document.querySelectorAll('#Torre-meio div').length;
+  const qtdTorreFinal = document.querySelectorAll('#Torre-final div').length;
+  if(qtdTorreFinal === 3 || qtdTorreMeio === 3) {
+    text.innerText = "Parabéns, você conseguiu!!!"
+  } 
 }

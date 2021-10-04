@@ -19,6 +19,20 @@ body{
 }
 
 /* corpo */
+
+.text {
+  font-size: 22px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin-bottom: 20px;
+}
+.text p {
+  margin-bottom: 2px;
+}
+.regras {
+  list-style: decimal;
+  padding-left: 30px;
+}
+
 .jogo {
   display: flex;
   flex-direction: column;
